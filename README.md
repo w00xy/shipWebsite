@@ -53,7 +53,7 @@ uv run app/main.py
   Доступна по адресу [http://localhost:8000/admin](http://localhost:8000/admin)  
   (требуется логин и пароль администратора).
 - **Статические файлы** (загруженные фото и документы):  
-  Доступны по адресу [http://localhost:8000/app/static/](http://localhost:8000/static/...)
+  Доступны по адресу [http://localhost:8000/static/](http://localhost:8000/static/...)
 
 ---
 
