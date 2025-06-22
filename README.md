@@ -15,8 +15,8 @@
 ### 1. Клонируйте репозиторий и перейдите в папку проекта
 
 ```bash
-git clone [<ваш-репозиторий>](https://github.com/w00xy/shipWebsite)
-cd [<ваша_папка_проекта>](https://github.com/w00xy/shipWebsite)
+git clone https://github.com/w00xy/shipWebsite
+cd shipWebsite
 ```
 
 ### 2. Установите зависимости
