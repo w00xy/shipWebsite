@@ -40,7 +40,7 @@ uv run main.py
 или (если у вас структура с backend):
 
 ```bash
-uv run backend/app/main.py
+uv run app/main.py
 ```
 
 ---
