@@ -15,8 +15,8 @@
 ### 1. Клонируйте репозиторий и перейдите в папку проекта
 
 ```bash
-git clone <ваш-репозиторий>
-cd <ваша_папка_проекта>
+git clone https://github.com/w00xy/shipWebsite
+cd shipWebsite
 ```
 
 ### 2. Установите зависимости
@@ -40,7 +40,7 @@ uv run main.py
 или (если у вас структура с backend):
 
 ```bash
-uv run backend/app/main.py
+uv run app/main.py
 ```
 
 ---
@@ -53,7 +53,7 @@ uv run backend/app/main.py
   Доступна по адресу [http://localhost:8000/admin](http://localhost:8000/admin)  
   (требуется логин и пароль администратора).
 - **Статические файлы** (загруженные фото и документы):  
-  Доступны по адресу [http://localhost:8000/app/static/](http://localhost:8000/app/static/...)
+  Доступны по адресу [http://localhost:8000/static/](http://localhost:8000/static/...)
 
 ---
 
