@@ -1,6 +1,7 @@
 .hero {
-    position: absolute;
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -11,10 +12,7 @@
 }
 
 .sliderTrack {
-    display: flex;
     height: 100vh;
-    width: 300vw; /* 3 слайда */
-    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .slide {
