@@ -145,3 +145,5 @@ coverage/
 *.zip
 
 backend/app/static/
+
+*.db
