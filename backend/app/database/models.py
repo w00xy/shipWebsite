@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
-from sqlalchemy.orm import DeclarativeBase
+from sqlalchemy.orm import DeclarativeBase, relationship
 from sqlalchemy import func
 from fastapi_storages.integrations.sqlalchemy import FileType
 
@@ -30,15 +30,30 @@ class WorkCategory(BaseModel):
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(100), unique=True, nullable=False)
     short_description = Column(String(255), nullable=True)
+    
+    def __str__(self):
+        return self.name
+    
+    def __repr__(self):
+        return f"<WorkCategory(name={self.name})>"
 
 class WorkExample(BaseModel):
     __tablename__ = "work_examples"
     __pydantic_model__ = WorkExampleSchema
+    
+    __name__ = "Примеры работ"
+    
     id = Column(Integer, primary_key=True, autoincrement=True)
     category_id = Column(Integer, ForeignKey("work_categories.id"))
     photo = Column(FileType(storage=storage))
     title = Column(String(100), nullable=True)
     description = Column(String(255), nullable=True)
+    
+    category = relationship("WorkCategory", backref="examples")
+    
+    def __str__(self):
+        return self.title
+
 
 class Document(BaseModel):
     __tablename__ = "documents"

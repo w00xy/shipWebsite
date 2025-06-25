@@ -1,0 +1,27 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      # Volume для базы данных SQLite (используем существующий путь)
+      - ./backend/app/database.db:/app/app/database.db
+      # Volume для статических файлов (используем существующий путь)
+      - ./backend/app/static:/app/app/static
+    env_file:
+      - ./backend/app/.env
+    restart: unless-stopped
+    container_name: ship-website-backend
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80" # Сайт будет доступен на http://localhost:8080
+    restart: unless-stopped
+    container_name: ship-website-frontend
+    depends_on:
+      - backend

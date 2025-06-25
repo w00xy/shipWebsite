@@ -9,10 +9,15 @@ class Settings(BaseSettings):
     ADMIN_LOGIN: str
     ADMIN_PASSWORD: str
     
+    CORS_ALLOW_ORIGINS: list[str] = ["*"]
+    CORS_ALLOW_CREDENTIALS: bool = True
+    CORS_ALLOW_METHODS: list[str] = ["*"]
+    CORS_ALLOW_HEADERS: list[str] = ["*"]
+    
     class Config:
         env_file = os.path.join(os.path.dirname(__file__), ".env")
         env_file_encoding = "utf-8"
 
-storage = FileSystemStorage(path="app/static")
+storage = FileSystemStorage(path="static")
 
 settings = Settings()
