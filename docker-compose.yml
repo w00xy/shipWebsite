@@ -19,8 +19,11 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+    env_file:
+      - ./frontend/.env
+      - ./frontend/.env.production
     ports:
-      - "8080:80" # Сайт будет доступен на http://localhost:8080
+      - "80:80" # Сайт будет доступен на http://localhost:80
     restart: unless-stopped
     container_name: ship-website-frontend
     depends_on:

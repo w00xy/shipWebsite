@@ -24,6 +24,8 @@ app = FastAPI(
     title="Ship Website API",
     description="API сайта",
     version="1.0.0",
+    docs_url="/api/docs",
+    openapi_url="/api/openapi.json"
 )  
 
 app.add_middleware(

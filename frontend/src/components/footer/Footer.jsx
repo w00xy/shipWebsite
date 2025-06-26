@@ -11,7 +11,7 @@ const Footer = () => {
           <span className={styles.companyName}>ООО «ЮКО»</span>
         </div>
         <div className={styles.linksSection}>
-          <div className={styles.column}>
+          <div id="contacts-block" className={styles.column}>
             <h3 className={styles.title}>Контакты</h3>
             <a href="tel:+70000000000" className={styles.link}>+7 000 000-00-00</a>
             <a href="mailto:oooyuko@yandex.ru" className={styles.link}>oooyuko@yandex.ru</a>

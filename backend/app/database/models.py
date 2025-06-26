@@ -52,7 +52,7 @@ class WorkExample(BaseModel):
     category = relationship("WorkCategory", backref="examples")
     
     def __str__(self):
-        return self.title
+        return self.title if self.title else "Без назв"
 
 
 class Document(BaseModel):

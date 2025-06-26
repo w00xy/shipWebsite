@@ -39,6 +39,7 @@
   margin-left: 32px;
   font-size: 1.1rem;
   transition: color 0.2s;
+  z-index: 150;
 }
 
 .nav a:hover {

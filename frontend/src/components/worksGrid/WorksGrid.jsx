@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './WorksGrid.module.css';
+import API_URL from '../../config';
 
 const WorksGrid = ({ categoryId, type = 'default' }) => {
   const [works, setWorks] = useState([]);
@@ -9,7 +10,7 @@ const WorksGrid = ({ categoryId, type = 'default' }) => {
   useEffect(() => {
     const fetchWorks = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/api/works/${categoryId}`);
+        const response = await fetch(`${API_URL}/api/works/${categoryId}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -40,7 +41,7 @@ const WorksGrid = ({ categoryId, type = 'default' }) => {
       <div className={styles.grid}>
         {works.slice(0, visibleCount).map(work => (
           <div key={work.id} className={cardClass}>
-            <img src={`http://localhost:8000/${work.photo}`} alt={work.title} className={styles.cardImage} />
+            <img src={`${API_URL}/${work.photo}`} alt={work.title} className={styles.cardImage} />
             {type === 'default' && (
               <>
                 <div className={styles.cardOverlay} />
